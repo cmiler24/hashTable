@@ -79,9 +79,8 @@ void LinkedList::printList() {
     //     return;
     // }
     while (temp != NULL) {
-        cout << temp->data << endl;
+        cout << temp->data << " ";
         temp = temp->next;
     }
-        // cout << temp->data << endl;
-    cout << endl; // new string for the next print
+        cout << endl;
 }

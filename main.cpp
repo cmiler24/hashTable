@@ -37,30 +37,23 @@ int main() {
 
     // Your time to shine starts now
 
+    cout << "K:" << k << endl;
     // create a newHashTable
     HashTable * ht = new HashTable(k);
     
-    for (int i = 0; i < k; i++) {
-        cout << "adding" << endl;
+    for (int i = 0; i < n; i++) {
         ht->addToTable(texts[i]);
     }
 
-    cout << "==== Printing the contents of the first 5 slots ====" << endl;
+    cout << "\n==== Printing the contents of the first 5 slots ====" << endl;
     ht->printFirstFive();
     
-    // cout << "==== Printing the slot lengths ====" << endl;
-    // ht->printSlotLengths();
+    cout << "\n==== Printing the slot lengths ====" << endl;
+    ht->printSlotLengths();
 
-    // cout << "==== Printing the standard variance =====" << endl;
-    
-    // double average = k / n;
-    // double sum = 0;
-    // for (int i = 0; i < n; i++) {
-    //     sum += pow(sizeof(*(ht+i)) - average, 2);
-    //     // sum++;
-    // }
-    // int std_dev = sqrt((1/k)*(sum));
-    // cout << std_dev << endl;
+    cout << "\n==== Printing the standard variance =====" << endl;
+    double std_dev = ht->calculateStdVar(k, n);
+    cout << std_dev << endl;
 
     return 0;
 }

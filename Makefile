@@ -1,3 +1,3 @@
 all:
 	g++ -o encoder main.cpp hash.cpp
-	./encoder < inputs/atoz.txt
+	./encoder < inputs/common500.txt
