@@ -39,15 +39,14 @@ int main() {
 
     // create a newHashTable
     HashTable * ht = new HashTable(k);
-    int x = ht->getLength();
-
-    for (int i = 0; i < x; i++) {
+    
+    for (int i = 0; i < k; i++) {
         cout << "adding" << endl;
         ht->addToTable(texts[i]);
     }
 
     cout << "==== Printing the contents of the first 5 slots ====" << endl;
-    // ht->printFirstFive();
+    ht->printFirstFive();
     
     // cout << "==== Printing the slot lengths ====" << endl;
     // ht->printSlotLengths();

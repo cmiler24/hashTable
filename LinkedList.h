@@ -44,11 +44,11 @@ void LinkedList::add(string key) {
     // traverse the list until you find tail, then add new node to tail
 
     Node* temp = head;
-    int count = 0;
-    while(count < length - 2) {
+
+    while (temp->next) {
         temp = temp->next;
-        count++;
     }
+
     temp->next = node;
     length++;
 }
@@ -75,14 +75,13 @@ int LinkedList::getSize() {
 
 void LinkedList::printList() {
     Node* temp = head;
-    if (length == 1) {
-        cout << "data: " << head->data << endl;
-        return;
-    }
-
-    while (temp->next) {
+    // if (length == 1) {
+    //     return;
+    // }
+    while (temp != NULL) {
         cout << temp->data << endl;
         temp = temp->next;
     }
+        // cout << temp->data << endl;
     cout << endl; // new string for the next print
 }

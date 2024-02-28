@@ -22,7 +22,6 @@ class HashTable {
 };
 
 HashTable::HashTable(int numSlots) {
-    cout << "numSlots" << numSlots << endl;
     hashTable = new LinkedList[numSlots];
     
     for (int i = 0; i < numSlots; i++) {
@@ -43,26 +42,26 @@ bool HashTable::isList(int i) {
 }
 
 void HashTable::addToTable(string key) {
-    cout << "adding to table " << endl;
     int index = 0;
 
     hashTable[index].add(key);
     htSize++;
-    cout << "added" << endl;
 };
 
 int HashTable::getLength() {
     return capacity;
 }
 
-// void HashTable::printFirstFive() {
-//     for (int i = 0; i < 5; i++) {
-//         // access hashtable at first slot
-//         if (hashTable[i].length > 0) {
-//             hashTable[i].printList();       
-//         } 
-//     }
-// };
+void HashTable::printFirstFive() {
+    for (int i = 0; i < 5; i++) {
+        // access hashtable at first slot
+            cout << "index " << i << endl;
+        if (hashTable[i].length > 0) {
+            cout << "index length is > 0: " << i << endl;
+            hashTable[i].printList(); 
+        } 
+    }
+};
 
 // void HashTable::printSlotLengths() {
 //     for (int i = 0; i < htSize; i++) {
