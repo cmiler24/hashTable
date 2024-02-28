@@ -1,8 +1,8 @@
 /*
 CSE 310 Hash Function DIY Contest
 Instructor: Yiran "Lawrence" Luo
-Your name(s): Cigomba Miler
-Your team alias: 
+Your name(s): Cigomba Miler, Atiman
+Your team alias:
 */
 
 #include <iostream>
@@ -38,29 +38,30 @@ int main() {
     // Your time to shine starts now
 
     // create a newHashTable
-    HashTable* ht = new HashTable(k);
+    HashTable * ht = new HashTable(k);
+    int x = ht->getLength();
 
-    for (int i = 0; i < k; i++) {
+    for (int i = 0; i < x; i++) {
+        cout << "adding" << endl;
         ht->addToTable(texts[i]);
-        cout << "added ";
-    };
+    }
 
     cout << "==== Printing the contents of the first 5 slots ====" << endl;
-    ht->printFirstFive();
+    // ht->printFirstFive();
     
-    cout << "==== Printing the slot lengths ====" << endl;
+    // cout << "==== Printing the slot lengths ====" << endl;
     // ht->printSlotLengths();
 
-    cout << "==== Printing the standard variance =====" << endl;
+    // cout << "==== Printing the standard variance =====" << endl;
     
-    double average = k / n;
-    double sum = 0;
-    for (int i = 0; i < n; i++) {
-        sum += pow(sizeof(*(ht+i)) - average, 2);
-        // sum++;
-    }
-    int std_dev = sqrt((1/k)*(sum));
-    cout << std_dev << endl;
+    // double average = k / n;
+    // double sum = 0;
+    // for (int i = 0; i < n; i++) {
+    //     sum += pow(sizeof(*(ht+i)) - average, 2);
+    //     // sum++;
+    // }
+    // int std_dev = sqrt((1/k)*(sum));
+    // cout << std_dev << endl;
 
     return 0;
 }

@@ -12,6 +12,7 @@ class LinkedList {
     Node* head;
     
     public:
+        int length;
         //constructor
         LinkedList();
         
@@ -25,6 +26,7 @@ class LinkedList {
 
 LinkedList::LinkedList() {
     head = NULL;
+    length = 0;
 }
 
 // add new node to LinkedList
@@ -35,14 +37,20 @@ void LinkedList::add(string key) {
 
     if (head == NULL) {
         head = node;
+        head->next = NULL;
+        length++;
         return;
     }
     // traverse the list until you find tail, then add new node to tail
+
     Node* temp = head;
-    while(temp->next) {
+    int count = 0;
+    while(count < length - 2) {
         temp = temp->next;
+        count++;
     }
     temp->next = node;
+    length++;
 }
 
 // retrieve node from LinkedList
@@ -62,19 +70,17 @@ Node * LinkedList::getHead() {
 }
 
 int LinkedList::getSize() {
-    Node* temp = head;
-    int cap = 0;
-    while(temp->next) {
-        cap++;
-        temp = temp->next;
-    }
-    return cap;
+   return length;
 }
 
 void LinkedList::printList() {
     Node* temp = head;
+    if (length == 1) {
+        cout << "data: " << head->data << endl;
+        return;
+    }
+
     while (temp->next) {
-        // printf(" %s ", temp->data);
         cout << temp->data << endl;
         temp = temp->next;
     }
